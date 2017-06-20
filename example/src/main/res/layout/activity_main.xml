@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:background="@android:color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="io.intrepid.example.MainActivity"
+    >
+
+    <io.intrepid.roundedbutton.RoundedButton
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:text="Filled"
+        android:textSize="16sp"
+        />
+
+    <io.intrepid.roundedbutton.RoundedButton
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:text="Stroke"
+        android:textSize="16sp"
+        app:rb_stroke_color="@color/colorPrimary"
+        />
+
+    <io.intrepid.roundedbutton.RoundedButton
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="32dp"
+        android:enabled="false"
+        android:text="Disabled"
+        android:textSize="16sp"
+        />
+</LinearLayout>
