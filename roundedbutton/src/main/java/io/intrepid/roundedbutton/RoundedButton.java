@@ -16,6 +16,7 @@ import android.view.Gravity;
 
 public class RoundedButton extends AppCompatTextView {
 
+    private static final String ANDROID_NAMESPACE = "http://schemas.android.com/apk/res/android";
     private static final int INVALID_COLOR = -1;
 
     @ColorInt
@@ -64,7 +65,12 @@ public class RoundedButton extends AppCompatTextView {
 
             typedArray.recycle();
         }
-        setGravity(Gravity.CENTER);
+
+        if (attrs == null || attrs.getAttributeValue(ANDROID_NAMESPACE, "gravity") == null) {
+            // default to center gravity if it's not specified
+            setGravity(Gravity.CENTER);
+        }
+
         updateBackground();
     }
 
