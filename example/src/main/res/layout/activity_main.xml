@@ -27,6 +27,7 @@
         android:layout_marginBottom="32dp"
         android:clickable="true"
         android:text="Stroke"
+        app:rb_pressed_color="@color/colorPrimary"
         android:textSize="16sp"
         app:rb_stroke_color="@color/colorPrimary"
         />

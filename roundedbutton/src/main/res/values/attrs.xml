@@ -4,6 +4,7 @@
         <attr name="rb_fill_color" format="color"/>
         <attr name="rb_stroke_width" format="dimension"/>
         <attr name="rb_stroke_color" format="color"/>
+        <attr name="rb_pressed_color" format="color"/>
         <attr name="rb_disabled_color" format="color"/>
     </declare-styleable>
 </resources>

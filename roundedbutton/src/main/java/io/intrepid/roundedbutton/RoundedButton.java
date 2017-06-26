@@ -26,6 +26,8 @@ public class RoundedButton extends AppCompatTextView {
     @Dimension
     private int strokeWidth;
     @ColorInt
+    private int pressedColor;
+    @ColorInt
     private int disabledColor;
 
     public RoundedButton(Context context) {
@@ -62,7 +64,7 @@ public class RoundedButton extends AppCompatTextView {
             fillColor = typedArray.getColor(R.styleable.RoundedButton_rb_fill_color, defaultFillColor);
 
             disabledColor = typedArray.getColor(R.styleable.RoundedButton_rb_disabled_color, ContextCompat.getColor(getContext(), R.color.rb_default_disabled_color));
-
+            pressedColor = typedArray.getColor(R.styleable.RoundedButton_rb_pressed_color, INVALID_COLOR);
             typedArray.recycle();
         }
 
@@ -85,6 +87,11 @@ public class RoundedButton extends AppCompatTextView {
         updateBackground();
     }
 
+    public void setPressedColor(@ColorInt int color) {
+        this.pressedColor = color;
+        updateBackground();
+    }
+
     public void setDisabledColor(@ColorInt int color) {
         this.disabledColor = color;
         updateBackground();
@@ -93,7 +100,7 @@ public class RoundedButton extends AppCompatTextView {
     private void updateBackground() {
         StateListDrawable stateListDrawable = new StateListDrawable();
         Drawable defaultDrawable = createRoundedRectangleDrawable(fillColor, strokeColor, strokeWidth);
-        int darkenedFill = darkenColor(fillColor);
+        int darkenedFill = pressedColor == INVALID_COLOR ? darkenColor(fillColor) : pressedColor;
         Drawable pressedDrawable = createRoundedRectangleDrawable(darkenedFill, strokeColor, strokeWidth);
         Drawable disabledDrawable = createRoundedRectangleDrawable(disabledColor, strokeColor, strokeWidth);
         stateListDrawable.addState(new int[] { -android.R.attr.state_enabled }, disabledDrawable);

@@ -12,14 +12,14 @@ dependencies {
 
 Details
 =======
-A simple button widget with a rectanglular background where both ends are cornered like a semi circle. Both the fill color and the stroke color/width can be customized. The widget also automatically darkens the fill color when touched and uses a different color for disabled state.
+A simple button widget with a rectanglular background where both ends are cornered like a semi circle. Both the fill color and the stroke color/width can be customized. The widget also automatically darkens the fill color when touched (default behavior, can be set to a specific color too) and uses a different color for disabled state.
 <br/>
 <img src="screenshot.png" />
 
 
 Usage
 =====
-Simply include `io.intrepid.roundedbutton.RoundedButton` in the layout xml and treat it like any other TextView/Button. The fill color, stroke color, stroke width, and disabled color can also be customized:
+Simply include `io.intrepid.roundedbutton.RoundedButton` in the layout xml and treat it like any other TextView/Button. The fill color, stroke color, stroke width, pressed color, and disabled color can also be customized:
 ```
 <io.intrepid.roundedbutton.RoundedButton
     android:layout_width="200dp"
@@ -31,6 +31,7 @@ Simply include `io.intrepid.roundedbutton.RoundedButton` in the layout xml and t
     app:rb_fill_color="@color/colorAccent"
     app:rb_stroke_color="#11dd11"
     app:rb_stroke_width="0.5dp"
+    app:rb_pressed_color="#303f9f"
     app:rb_disabled_color="#dd1111"
     />
 ```
