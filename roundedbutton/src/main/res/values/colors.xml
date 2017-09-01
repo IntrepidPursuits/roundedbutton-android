@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rb_default_fill_color">#2196F3</color>
+    <color name="rb_default_disabled_color">#d8d8d8</color>
+    <color name="rb_darken_color">#10000000</color>
+</resources>
